@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --primary-blue: #3b82f6;
+}
+
+body{
+    font-family: 'Inclusive Sans', sans-serif;
+}
+
+/* Tailwind Grouping */
+
+.brand-image{
+    @apply brand-1 border border-blue-400 w-max h-max flex items-center justify-center;
+}
+
+
+/* Styling */
+
+
+
+
+a.active-link::after{
+    animation: linkLoad 0.5s forwards ease-in;
+}
+
+@keyframes linkLoad{
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 50%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/car-bg.jpeg");
+    background-size: cover;
+    background-position: top left;
+}
+
+.btn-animate{
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.btn-animate >span{
+    z-index: 1;
+    position: relative;
+}
+
+.btn-animate::before{
+    transition: 0.4s;
+    content: '';
+    top: 0;
+    left: -100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-blue);
+    z-index: 0;
+}
+
+.btn-animate:hover{
+    color: white;
+}
+
+.btn-animate:hover::before{
+    left: 0;
+}
+
+.text-gradient{
+    background: linear-gradient(to right, #1d4ed8);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.neuromorphism{
+    border-radius: 50px;
+        background: #e0e0e0;
+        box-shadow: 20px 20px 59px #828282,
+            -20px -20px 59px #ffffff;
+}
+.neuromorphism-color{
+    border-radius: 50px;
+        background: #e0e0e0;
+        box-shadow: 10px 10px 30px #3d3d3d,
+            -10px -10px 59px white;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+.slideIn{
+    animation: slideIn forwards 1s ease-in-out;
+}
+
+.fadeIn{
+    animation: fadeIn forwards 0.4s ease-in-out;
+}
+
+@keyframes slideIn {
+    from{
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.color-bullet{
+    list-style: disc;
+    color: #29d462;
+    font-size: 1rem;
+}
+
+.color-bullet > li >span{
+    color: #707070;
+    font-weight: 100;
+}
+
+.color-bullet-red{
+    color: #f14343;
+}
+
